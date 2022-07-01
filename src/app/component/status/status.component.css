@@ -1,0 +1,23 @@
+button {
+    position: relative;
+    border-radius: 30px;
+    border: none;
+    padding: 4px 10px 4px 25px; }
+.active {
+    background: #cff6dd;
+    color: #1fa750; }
+.active:after {
+      background: #23bd5a; }
+.waiting {
+    background: #fdf5dd;
+    color: #cfa00c; }
+.waiting:after {
+      background: #f2be1d; }
+button:after {
+        position: absolute;
+        top: 9px;
+        left: 10px;
+        width: 10px;
+        height: 10px;
+        content: '';
+        border-radius: 50%; }

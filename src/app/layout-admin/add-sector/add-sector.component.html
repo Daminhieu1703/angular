@@ -1,0 +1,29 @@
+<div class="container">
+    <h3 class="text-center pt-1">Add sector</h3>
+<div class="row">
+    <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+                <div class="container">
+                    <form id="contact-form"  role="form" [formGroup]="Sector">
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group"> 
+                                        <label for="form_name">Name</label>
+                                        <input id="form_name" type="text" formControlName="name" [(ngModel)]="editSector.name" class="form-control"> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 pt-3">
+                                <button class="btn btn-success btn-send btn-block" (click)="onSubmit(Sector.value)">Submit</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.8 -->
+    </div> <!-- /.row-->
+</div>
+</div>
+

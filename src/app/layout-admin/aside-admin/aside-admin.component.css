@@ -1,0 +1,11 @@
+.flex-shrink-0{
+    width:250px;
+}
+.fw-semibold, .link-white{
+    color: white;
+    text-decoration: none;
+}
+.btn-secondary{
+    background-color: #212529;
+    border: none;
+}

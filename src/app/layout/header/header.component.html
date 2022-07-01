@@ -1,0 +1,55 @@
+<div *ngIf="user === null">
+  <div class="collapse bg-dark" id="navbarHeader">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 col-md-7 py-4">
+          <h4 class="text-white">Về chúng tôi</h4>
+          <p class="text-muted">HPhone là thương hiệu thuộc Công ty Cổ phần Thế giới di động, Tên đầy đủ là Hieu Phone, là một tập đoàn bán lẻ tại Việt Nam với lĩnh vực kinh doanh chính là bán lẻ điện thoại di động, thiết bị số và điện tử tiêu dùng.</p>
+        </div>
+        <div class="col-sm-4 offset-md-1 py-4">
+          <h4 class="text-white">Thao tác</h4>
+          <ul class="list-unstyled">
+            <li><a routerLink="login" class="text-white">Đăng nhập</a></li>
+            <li><a href="#" class="text-white">Đăng ký</a></li>
+            <li><a href="#" class="text-white">Liên hệ</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="navbar navbar-dark bg-dark shadow-sm">
+  <div class="container">
+    <a routerLink="home" class="navbar-brand d-flex align-items-center">
+      <img src="./assets/img/logo_mobile.png" alt="" width="50" height="50">
+    </a>
+    <a routerLink="products" class="navbar-brand d-flex align-items-center">iPhone</a>
+    <a routerLink="" class="navbar-brand d-flex align-items-center">Samsung</a>
+    <a routerLink="" class="navbar-brand d-flex align-items-center">OPPO</a>
+    <a routerLink="" class="navbar-brand d-flex align-items-center">Vivo</a>
+    <a routerLink="" class="navbar-brand d-flex align-items-center">Xiaomi</a>
+    <form class="form-inline navbar-brand d-flex">
+      <div class="input-group">
+          <input class="form-control" type="text" placeholder="Tìm kiếm..."/>
+          <button class="btn btn-info" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+      </div>
+      <a [routerLink]="['../cart']" class="navbar-brand cart"><i class="fas fa-shopping-cart"></i></a>
+    </form>
+    <div *ngIf="user === null">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div *ngIf="user !== null">
+      <div class="btn-group">
+        <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{user.name}}
+          <i class="fas fa-user fa-fw"></i>
+        </button>
+        <ul class="dropdown-menu">
+          <li><button class="dropdown-item" (click)="logout()">Đăng xuất</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

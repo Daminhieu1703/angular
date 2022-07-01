@@ -1,0 +1,19 @@
+<div class="d-flex">
+    <div class="col">
+        <app-aside></app-aside>
+    </div>
+    <div class="col-8">
+        <h1 class="fw-bold text-center pt-4">TẤT CẢ SẢN PHẨM IPHONE</h1>
+        <div class="wrapper" data-aos="fade-up" data-aos-duration="3000">
+            <div class="card text-center" *ngFor="let phone of phones">
+                    <div class="image"> <img [src]="phone.img" width="300"> </div>
+                <div class="about-product text-center">
+                    <h3>{{phone.name}}</h3>
+                    <h4>{{phone.price | currency: "VND"}}</h4>
+                    <h4 class="text-white pb-2" *ngIf="phone.status == 2">Hết hàng</h4>
+                    <a [routerLink]="['../detail', phone.id]"class="btn btn-success buy-now" *ngIf="phone.status == 1">Xem chi tiết</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

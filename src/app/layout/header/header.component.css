@@ -1,0 +1,20 @@
+.btn-info{
+    background-color: #4a8cac;
+    border-color: #4a8cac;
+}
+.fa-search{
+    color: white;
+}
+.navbar-nav{
+    display: flex;
+}
+.cart{
+    margin-left: 10px;
+}
+.navbar-brand:hover{
+    color: #c2c2c2;
+}
+.btn-group > .btn-secondary{
+    background-color: #212529;
+    border: #212529;
+}

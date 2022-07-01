@@ -1,0 +1,28 @@
+
+  .list-group {
+    width: 400px !important;
+    margin: 32px 0 0 50px;
+  }
+  
+  .list-group-item {
+    border-radius: none;
+    background: #4a8cac;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out
+  }
+  
+  .list-group-item:hover {
+    transform: scaleX(1.1)
+  }
+  
+  .list-group-item:hover .check {
+    opacity: 1
+  }
+  .about span{
+    margin-right: 10px;
+  }
+  .d-flex>i{
+    width: 35px;
+    line-height: 50px;
+    font-size: 20px;
+  }

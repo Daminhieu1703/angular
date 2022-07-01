@@ -1,0 +1,51 @@
+<div class="container" *ngIf="myCart === null">
+    <img src="./../../../assets/img/cart_empty.png" alt="" width="500px" height="300px" style="margin:50px 0 50px 350px;">
+</div>
+<div class="container mb-4"  *ngIf="myCart !== null">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead class="thead">
+                        <tr>
+                            <th scope="col"></th>
+                            <th scope="col">SẢN PHẨM</th>
+                            <th scope="col"></th>
+                            <th scope="col" class="text-center">SỐ LƯỢNG</th>
+                            <th scope="col" class="text-right">GIÁ HIỆN TẠI</th>
+                            <th><button class="btn btn-info" (click)="remove_all()">XÓA HẾT GIỎ HÀNG</button></th>
+                        </tr>
+                    </thead>
+                    <tbody class="tbody">
+                        <tr *ngFor="let products of productInCart">
+                            <td><img id="images" [src]="products.img" /> </td>
+                            <td>{{products.name}}</td>
+                            <td class="text-decoration-line-through"></td>
+                            <td><input class="form-control" type="text" [value]="products.quantity" /></td>
+                            <td class="text-right">{{products.price | currency: "VND"}}</td>
+                            <td class="text-right"><button class="btn btn-sm btn-danger" (click)="remove_only(products.id)"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Tổng tiền giỏ hàng</td>
+                            <td class="text-right">{{total_products | currency: "VND"}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <a [routerLink]="['../products']" class="btn btn-block btn-secondary">Quay lại</a>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <button class="btn btn-lg btn-block btn-info text-uppercase">Thanh toán</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

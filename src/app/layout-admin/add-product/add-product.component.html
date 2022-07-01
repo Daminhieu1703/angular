@@ -1,0 +1,83 @@
+<div class="container">
+    <h3 class="text-center pt-1">Add product</h3>
+<div class="row">
+    <div class="col-lg-7 mx-auto">
+        <div class="card mt-2 mx-auto p-4 bg-light">
+            <div class="card-body bg-light">
+                <div class="container">
+                    <form id="contact-form" class="form" role="form" [formGroup]="Product">
+                        <div class="controls">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        <label for="form_name">Name</label>
+                                        <input id="form_name" type="text" formControlName="name" [(ngModel)]="editProduct.name" class="form-control"> 
+                                    </div>
+                                    <app-show-validate
+                                        [formField]="Product.get('name')"
+                                        key="tên sản phẩm"
+                                    ></app-show-validate>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        <label for="form_lastname">Price</label>
+                                        <input id="form_lastname" type="number" formControlName="price" [(ngModel)]="editProduct.price" class="form-control"> 
+                                    </div>
+                                    <app-show-validate
+                                        [formField]="Product.get('price')"
+                                        key="giá sản phẩm"
+                                    ></app-show-validate>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        <label for="form_email">Ảnh</label>
+                                        <input type="hidden" (change)="keepImage($event)">
+                                        <input id="form_email" type="file" (change)="changeImage($event)" formControlName="img" [(ngModel)]="editProduct.img" class="form-control"> 
+                                        <img [src]="imageBase64" alt="" width="100">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group"> 
+                                        <label for="form_need">Status</label> 
+                                        <select id="form_need" formControlName="status" [(ngModel)]="editProduct.status" class="form-control">
+                                            <option value="0" selected disabled>Chọn trạng thái</option>
+                                            <option value="1">Còn hàng</option>
+                                            <option value="2">Hết hàng</option>
+                                        </select> 
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Loại hàng</label>
+                                        <select id="form_need" formControlName="SectorId" [(ngModel)]="editProduct.SectorId" class="form-control">
+                                            <option value="0" selected disabled>Chọn loại hàng</option>
+                                            <option *ngFor="let sector of sectors" [value]="sector.id">{{sector.name}}</option>
+                                        </select> 
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="form_message">Description</label>
+                                        <textarea id="form_message" formControlName="desc" [(ngModel)]="editProduct.desc" class="form-control" rows="4"></textarea> 
+                                    </div>
+                                    <app-show-validate
+                                        [formField]="Product.get('desc')"
+                                        key="mô tả sản phẩm"
+                                    ></app-show-validate>
+                                </div>
+                                <div class="col-md-12 pt-3">
+                                    <button [disabled]="Product.invalid" class="btn btn-success btn-send btn-block" (click)="onSubmit(Product.value)">Submit</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div> <!-- /.8 -->
+    </div> <!-- /.row-->
+</div>
+</div>

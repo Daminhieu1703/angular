@@ -1,0 +1,39 @@
+<section class="ftco-section mb-3">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center mt-1">
+          <h2 class="heading-section">Table sectors</h2>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="table-wrap">
+            <table class="table table-responsive-xl">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>NAME</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="alert" role="alert" *ngFor="let sector of sectors">
+                  <td>{{sector.id}}</td>
+                  <td>{{sector.name}}</td>
+                  <td>
+                    <button [routerLink]="['../edit-sector',sector.id]" type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true"><i class="fas fa-edit"></i></span>
+                    </button>
+                  </td>
+                  <td>
+                    <button type="button" (click)="deleteSectorOnly(sector.id)" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true"><i class="fas fa-times"></i></span>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

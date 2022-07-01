@@ -1,0 +1,29 @@
+<main class="main" style="display: grid;grid-template-columns: 320px 1fr;">
+    <article class="product-card">
+        <section class="product-card-2">
+            <div class="product-card-content">
+                <div class="product-card-img">
+                        <a href=""><img [src]="ProductDetail.img" alt=""></a>
+                </div>
+            </div>
+            <div class="profile-product-card">
+                <div class="check-out">
+                        <div class="name-product">
+                            <h1>{{ProductDetail.name}}</h1>
+                        </div>
+                        <div class="product-card-text">
+                            <p>{{ProductDetail.desc}}</p>
+                        </div>
+                        <div class="price">
+                            <h4 *ngIf="ProductDetail.status === 1">Trạng thái: Còn hàng</h4>
+                            <h4 *ngIf="ProductDetail.status === 2">Trạng thái: Hết hàng</h4>
+                            <h3>Giá:{{ProductDetail.price | currency:"VND"}}</h3>
+                        </div>
+                        <div class="click-pay">
+                            <button type="button" class="btn btn-info" (click)="order(ProductDetail.id)">ĐẶT MUA NGAY</button>
+                        </div>
+                </div>
+            </div>
+        </section>
+    </article>
+</main> 

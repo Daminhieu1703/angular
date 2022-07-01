@@ -1,0 +1,53 @@
+<div class="flex-shrink-0 p-3">
+  <a href="/" class="d-flex align-items-center pb-3 mb-3 link-white text-decoration-none border-bottom">
+    <img src="./assets/img/logo_mobile.png" class="bi me-2" width="50" height="50">
+    <span class="fs-5 fw-semibold">HPhone</span>
+  </a>
+  <ul class="list-unstyled ps-0">
+    <li class="mb-1">
+      <button class="btn btn-secondary align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#user-collapse" aria-expanded="false">
+        Loại hàng
+      </button>
+      <div class="collapse" id="user-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="sectors" class="link-white rounded">Danh sách loại hàng</a></li>
+          <li><a routerLink="add-sector" class="link-white rounded">Thêm loại hàng</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-secondary align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+        Sản phẩm
+      </button>
+      <div class="collapse" id="dashboard-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="products" class="link-white rounded">Danh sách sản phẩm</a></li>
+          <li><a routerLink="add-product" class="link-white rounded">thêm sản phẩm</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="mb-1">
+      <button class="btn btn-secondary align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+        Tài khoản
+      </button>
+      <div class="collapse" id="orders-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a href="#" class="link-white rounded">Danh sách tài khoản</a></li>
+          <li><a href="#" class="link-white rounded">Thêm tài khoản</a></li>
+        </ul>
+      </div>
+    </li>
+    <li class="border-top my-3"></li>
+    <li class="mb-1">
+      <button class="btn btn-secondary align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+        Account
+      </button>
+      <div class="collapse" id="account-collapse">
+        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+          <li><a routerLink="user" class="link-white rounded">Profile</a></li>
+          <li><a href="#" class="link-white rounded">Sign out</a></li>
+        </ul>
+      </div>
+    </li>
+  </ul>
+</div>
